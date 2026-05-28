@@ -6,7 +6,7 @@ def reshape_tensor(x, op):
     """
     t = torch.tensor(x, dtype=torch.float32)
     if op == "flatten":
-        return t.flatten().tolist()
+        return t.reshape(-1).tolist()
     elif op == "squeeze":
         return t.squeeze().tolist()
     elif op == "transpose":
